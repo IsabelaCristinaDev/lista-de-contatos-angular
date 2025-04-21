@@ -9,7 +9,7 @@ import { ContactService } from '../../services/contact.service';
   selector: 'app-contact-list',
   standalone: true,
   templateUrl: './contact-list.component.html',
-  imports: [CommonModule, RouterModule]  // <- ESSENCIAL!
+  imports: [CommonModule, RouterModule]
 })
 export class ContactListComponent implements OnInit {
   contacts: Contact[] = [];

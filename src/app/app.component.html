@@ -4,7 +4,7 @@
   {{ showForm ? 'Fechar Formulário' : 'Adicionar Contato' }}
 </button>
 
-<!-- Formulário para adicionar um novo contato -->
+
 <div *ngIf="showForm">
   <form (ngSubmit)="onSubmit()">
     <label for="name">Nome</label>
@@ -20,7 +20,7 @@
   </form>
 </div>
 
-<!-- Lista de contatos -->
+
 <ul>
   <li *ngFor="let contato of contatos">
     {{ contato.name }} - {{ contato.email }} - {{ contato.phone }}
