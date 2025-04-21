@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let contact of contacts">
+    <p><strong>{{ contact.name }}</strong></p>
+    <p>{{ contact.phone }}</p>
+    <p>{{ contact.email }}</p> <!-- Exibindo o email -->
+    <a [routerLink]="['/contacts', contact.id]">Ver Detalhes</a>
+    <button (click)="removeContact(contact.id)">Remover</button>
+  </li>
+</ul>

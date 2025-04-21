@@ -1,0 +1,29 @@
+<h1>Lista de Contatos</h1>
+
+<button (click)="showForm = !showForm">
+  {{ showForm ? 'Fechar Formulário' : 'Adicionar Contato' }}
+</button>
+
+<!-- Formulário para adicionar um novo contato -->
+<div *ngIf="showForm">
+  <form (ngSubmit)="onSubmit()">
+    <label for="name">Nome</label>
+    <input type="text" id="name" [(ngModel)]="newContact.name" name="name" required />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" [(ngModel)]="newContact.email" name="email" required />
+
+    <label for="phone">Telefone</label>
+    <input type="text" id="phone" [(ngModel)]="newContact.phone" name="phone" required />
+
+    <button type="submit">Adicionar</button>
+  </form>
+</div>
+
+<!-- Lista de contatos -->
+<ul>
+  <li *ngFor="let contato of contatos">
+    {{ contato.name }} - {{ contato.email }} - {{ contato.phone }}
+    <button (click)="removeContact(contato.id)">Remover</button>
+  </li>
+</ul>
